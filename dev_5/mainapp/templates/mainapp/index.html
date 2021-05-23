@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title|capfirst }}</title>
+</head>
+<body>
+<a href="{% url 'mainapp:index' %}">Главная</a>
+<a href="{% url 'authapp:logout' %}">Выйти</a>
+<h1>ФИО студента группы</h1>
+    {% for item in random_name %}
+        <h3>{{ item }}</h3>
+    {% endfor %}
+</body>
+</html>
