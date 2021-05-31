@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page_title|default:"аутентификация"|capfirst }}</title>
+</head>
+<body>
+        <a href="{% url 'mainapp:index' %}" class="nav-link px-2 text-secondary">Главная</a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'authapp:logout' %}" class="user">Выйти</a>
+    {% endif %}
+    {% for item in num_img %}
+        <img src="{{ item.images.url }}">
+    {% endfor %}
+</body>
+</html>
